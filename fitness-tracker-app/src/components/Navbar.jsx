@@ -37,6 +37,11 @@ const Navbar = () => {
                   Steps
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/meals" className="nav-link">
+                  Meals
+                </Link>
+              </li>
             </ul>
             
             <div className="navbar-user">
