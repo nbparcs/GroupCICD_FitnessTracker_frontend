@@ -52,6 +52,7 @@ const Dashboard = () => {
           <p>Ready to track your fitness journey today?</p>
         </div>
 
+
         <div className="profile-section">
           <h3>Your Profile</h3>
           <div className="profile-info">
@@ -78,6 +79,12 @@ const Dashboard = () => {
           </div>
         </div>
 
+        <div className="coming-soon">
+          <p>
+            📊 Activity tracking, meal logging, and analytics features coming
+            soon!
+          </p>
+        </div>
       </div>
     </div>
   );
