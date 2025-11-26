@@ -30,10 +30,15 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const register = async (userData) => {
+    return await authService.register(userData);
+  };
+
   const value = {
     user,
     login,
     logout,
+    register,
     isAuthenticated: !!user,
     loading,
   };
