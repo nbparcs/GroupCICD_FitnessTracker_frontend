@@ -39,7 +39,7 @@ const StepsDashboard = () => {
       setStreak(streakData);
       setGoal(goalData);
     } catch (err) {
-      //setError('Failed to load dashboard data');
+      setError('Failed to load dashboard data');
       console.error('Error fetching dashboard data:', err);
     } finally {
       setLoading(false);
