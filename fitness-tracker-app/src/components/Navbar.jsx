@@ -27,6 +27,11 @@ const Navbar = () => {
                   Dashboard
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/steps" className="nav-link">
+                  Steps
+                </Link>
+              </li>
             </ul>
             
             <div className="navbar-user">
