@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
 import authService from '../../services/authService';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const { logout } = useAuth();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
