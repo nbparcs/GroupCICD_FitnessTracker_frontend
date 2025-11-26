@@ -56,6 +56,16 @@ const Dashboard = () => {
         <div className="quick-actions">
   <h3>Quick Actions</h3>
   <div className="actions-grid">
+    <Link to="/workouts" className="action-card">
+      <div className="action-icon">🏃</div>
+      <h4>View Workouts</h4>
+      <p>See all your workout logs</p>
+    </Link>
+    <Link to="/workouts/new" className="action-card">
+      <div className="action-icon">➕</div>
+      <h4>Log Workout</h4>
+      <p>Add a new workout entry</p>
+    </Link>
     <Link to="/steps" className="action-card">
       <div className="action-icon">👣</div>
       <h4>View Steps</h4>
@@ -98,6 +108,13 @@ const Dashboard = () => {
         <div className="quick-stats">
           <h3>Quick Stats</h3>
           <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-icon">🏃</div>
+              <div className="stat-info">
+                <p className="stat-label">Activities</p>
+                <p className="stat-value">0</p>
+              </div>
+            </div>
             <div className="stat-card">
               <div className="stat-icon">👟</div>
               <div className="stat-info">
