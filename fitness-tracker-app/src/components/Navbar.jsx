@@ -28,6 +28,13 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
+            
+            <div className="navbar-user">
+              <span className="user-email">{user.email}</span>
+              <button onClick={handleLogout} className="btn-logout">
+                Logout
+              </button>
+            </div>
           </>
         ) : (
           <div className="navbar-auth">
