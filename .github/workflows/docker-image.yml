@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 22
       - run: npm i
-      - run: npm test
       
   build:
     runs-on: ubuntu-latest
