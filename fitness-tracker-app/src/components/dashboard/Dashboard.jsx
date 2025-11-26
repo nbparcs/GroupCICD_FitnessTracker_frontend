@@ -66,6 +66,16 @@ const Dashboard = () => {
       <h4>Log Workout</h4>
       <p>Add a new workout entry</p>
     </Link>
+    <Link to="/meals" className="action-card">
+      <div className="action-icon">🍴</div>
+      <h4>View Meals</h4>
+      <p>See all your meal logs</p>
+    </Link>
+    <Link to="/meals/new" className="action-card">
+      <div className="action-icon">➕</div>
+      <h4>Log Meal</h4>
+      <p>Add a new meal entry</p>
+    </Link>
     <Link to="/steps" className="action-card">
       <div className="action-icon">👣</div>
       <h4>View Steps</h4>
@@ -112,6 +122,13 @@ const Dashboard = () => {
               <div className="stat-icon">🏃</div>
               <div className="stat-info">
                 <p className="stat-label">Activities</p>
+                <p className="stat-value">0</p>
+              </div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-icon">🔥</div>
+              <div className="stat-info">
+                <p className="stat-label">Calories Burned</p>
                 <p className="stat-value">0</p>
               </div>
             </div>
