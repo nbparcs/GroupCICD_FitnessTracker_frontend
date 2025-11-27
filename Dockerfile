@@ -1,16 +1,24 @@
-# ----- Build stage -----
-FROM node:22-alpine AS build
+# syntax=docker/dockerfile:1.4
+FROM node:18-alpine AS build
 WORKDIR /app
 
+# Enable BuildKit cache mounts
+RUN --mount=type=cache,target=/var/cache/npm \
+    npm config set cache /var/cache/npm --global
+
+# Copy only package files first for better layer caching
 COPY fitness-tracker-app/package*.json ./
 
-RUN npm ci --no-audit --no-fund
+# Use npm ci with cache
+RUN --mount=type=cache,target=/var/cache/npm \
+    npm ci --no-audit --no-fund --prefer-offline
 
 # Copy only necessary files for build
 COPY fitness-tracker-app/public ./public
 COPY fitness-tracker-app/src ./src
-# Build (works for CRA or Vite depending on your project)
-RUN npm run build
+
+# Build with production settings
+RUN npm run build -- --max-old-space-size=512
 
 # ----- Serve stage -----
 FROM nginx:alpine
