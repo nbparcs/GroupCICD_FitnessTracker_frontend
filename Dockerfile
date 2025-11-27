@@ -6,7 +6,9 @@ COPY fitness-tracker-app/package*.json ./
 
 RUN npm ci --no-audit --no-fund
 
-COPY fitness-tracker-app/. ./
+# Copy only necessary files for build
+COPY fitness-tracker-app/public ./public
+COPY fitness-tracker-app/src ./src
 # Build (works for CRA or Vite depending on your project)
 RUN npm run build
 
