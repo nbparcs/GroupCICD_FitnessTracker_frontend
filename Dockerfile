@@ -17,6 +17,9 @@ RUN --mount=type=cache,target=/var/cache/npm \
 COPY fitness-tracker-app/public ./public
 COPY fitness-tracker-app/src ./src
 
+ARG REACT_APP_API_BASE_URL
+ENV REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}
+
 # Build with production settings
 RUN npm run build -- --max-old-space-size=512
 
@@ -26,9 +29,6 @@ FROM nginx:alpine
 # Pick which folder to copy; default to CRA's "build"
 ARG BUILD_DIR=build
 ENV BUILD_DIR=${BUILD_DIR}
-
-ARG REACT_APP_API_BASE_URL
-ENV REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}
 
 # Copy the build output from the builder
 COPY --from=build /app/build /usr/share/nginx/html
