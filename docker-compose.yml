@@ -7,6 +7,10 @@ services:
       # If you use Vite, uncomment this:
       # args:
       #   BUILD_DIR: dist
+      args:
+        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL}
     ports:
       - "80:80"
     restart: unless-stopped
+    env_file:
+      - .env

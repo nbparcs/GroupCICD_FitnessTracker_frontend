@@ -27,6 +27,9 @@ FROM nginx:alpine
 ARG BUILD_DIR=build
 ENV BUILD_DIR=${BUILD_DIR}
 
+ARG REACT_APP_API_BASE_URL
+ENV REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}
+
 # Copy the build output from the builder
 COPY --from=build /app/build /usr/share/nginx/html
 
