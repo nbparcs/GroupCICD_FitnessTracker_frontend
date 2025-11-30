@@ -49,6 +49,7 @@ A modern, responsive web application built with React for tracking fitness activ
    ```
    The application will be available at `http://localhost:3000`
 
+
 ## Available Scripts
 
 - `npm start`: Runs the app in development mode
